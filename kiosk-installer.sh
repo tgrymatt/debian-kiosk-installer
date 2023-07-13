@@ -56,9 +56,6 @@ cat > /home/kiosk/.config/openbox/autostart << EOF
 xset s off
 
 #Disable display sleep
-xset -dpms
-xset dpms 0 0 0
-xset dpms force off
 xset dpms off
 
 
