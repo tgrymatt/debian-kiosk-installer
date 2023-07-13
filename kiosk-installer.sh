@@ -20,7 +20,7 @@ mkdir -p /home/kiosk/.config/openbox
 groupadd kiosk
 
 # create user if not exists
-id -u kiosk &>/dev/null || useradd -m kiosk -g kiosk -s /bin/bash 
+id -u kiosk &>/dev/null || useradd -m kiosk -g kiosk -s /bin/bash
 
 # rights
 chown -R kiosk:kiosk /home/kiosk
@@ -51,6 +51,16 @@ if [ -e "/home/kiosk/.config/openbox/autostart" ]; then
 fi
 cat > /home/kiosk/.config/openbox/autostart << EOF
 #!/bin/bash
+
+#Disable Screensaver
+xset s off
+
+#Disable display sleep
+xset -dpms
+xset dpms 0 0 0
+xset dpms force off
+xset dpms off
+
 
 unclutter -idle 0.1 -grab -root &
 
