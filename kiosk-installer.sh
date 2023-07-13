@@ -52,12 +52,10 @@ fi
 cat > /home/kiosk/.config/openbox/autostart << EOF
 #!/bin/bash
 
-#Disable Screensaver
-xset s off
-
-#Disable display sleep
-xset dpms off
-
+# Keep screen on
+xset -dpms     # Disable DPMS (Energy Star) features
+xset s off     # Disable screensaver
+xset s noblank # Don't blank video device
 
 unclutter -idle 0.1 -grab -root &
 
