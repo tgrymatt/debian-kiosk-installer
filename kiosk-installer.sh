@@ -31,6 +31,10 @@ if [ -e "/etc/X11/xorg.conf" ]; then
 fi
 cat > /etc/X11/xorg.conf << EOF
 Section "ServerFlags"
+		Option "BlankTime" "0"
+		Option "StandbyTime" "0"
+		Option "SuspendTime" "0"
+		Option "OffTime" "0"
     Option "DontVTSwitch" "true"
 EndSection
 EOF
